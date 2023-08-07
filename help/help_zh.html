@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幫助</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/help_style.css">
+    
+</head>
+
+<body>
+    <!-- Top banner -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a href="../main/index_zh.html"><img class="navbar-brand img-fluid" style="height: 60px;" src="./img/icon.jpg" alt="Minesweeper"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active text-light" style="font-size: 24px;" aria-current="page" href="../main/index_zh.html">踩地雷</a>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 me-3 mb-lg-0">
+                <li><button type="button" class="btn btnSize btn-danger mt-1 me-3" style="font-size: 20px;" onclick="location.href='../main/index_zh.html'">開始遊戲</button></li>
+                <li><button type="button" class="btn btnSize btn-secondary mt-1 me-3" style="font-size: 20px;" onclick="location.href='./help_zh.html'">幫助</button></li>
+                <li class="nav-item dropdown mt-1">
+                    <button class="btn btnSize btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">語言</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./help_zh.html">繁體中文</a></li>
+                        <li><a class="dropdown-item" href="./help_en.html">English</a></li>
+                        <li><a class="dropdown-item" href="./help_ja.html">日本語</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <!-- <div class="container" style="margin-top: 80px;">
+        <div class="fixed-top">
+            <div class="d-flex p-2 bg-secondary"  style="height: 80px;">
+                <div class="p-2">
+                    <img class="img-fluid" style="height: 40px;" src="./img/icon.jpg" alt="Minesweeper">
+                </div>
+                <div class="p-2">
+                    <p  style="font-size: 24px;">踩地雷</p>
+                </div>
+                <div class="p-2 ms-auto">
+                    <button type="button" class="btn btnSize btn-danger me-3" style="font-size: 20px;">開始遊戲</button>
+                    <button type="button" class="btn btnSize btn-dark me-3" style="font-size: 20px;" onclick="location.href='./help_zh.html'">幫助</button>
+                    <div class="dropdown" style="display: inline-block;">
+                        <button class="btn btnSize btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          語言
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="./help_zh.html">繁體中文</a></li>
+                          <li><a class="dropdown-item" href="./help_en.html">English</a></li>
+                          <li><a class="dropdown-item" href="./help_ja.html">日本語</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <br>
+
+    <!-- main body -->
+    <div class="container">
+        <ul class="flex-column flex-md-row nav nav-fill nav-pills" role="tablist">
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link active" href="#Rules" aria-selected="false" role="tab" tabindex="-1">規則</a></li>
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link" href="#Patterns" aria-selected="false" role="tab" tabindex="-1">地雷推導</a></li>
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link" href="#Efficiency" aria-selected="false" role="tab" tabindex="-1">效率</a></li>
+        </ul>
+
+        <div class="container tab-content mb-5 textSize">
+            <!-- Rules -->
+            <div class="tab-pane active show" id="Rules">
+                <br><h1>規則</h1>
+                <p>地雷會隨機分佈在矩形分割而成的方格之中，點擊所有安全的方格即可贏得遊戲。方格內的數字代表鄰近方格有多少地雷，您可根據不同數字推導出特定方格是否含有地雷。點擊滑鼠右鍵放置旗幟以標明地雷位置，點擊左鍵開啟方格。</p>
+                <p>點擊方格上方的黃色笑臉、灰色長型方條、或是鍵盤上的空白鍵以開始新遊戲。左上方的數字表示遊戲中尚未被標示旗幟的地雷數，右上方的數字則表示遊戲耗時。</p>
+                <hr>
+                <br><h1>展開周圍方格（雙鍵）</h1>
+                <p>當玩家在某數字周圍標示出與該數字相等的旗幟數量，並點擊該數字，則得以同時展開該數字周圍尚未被點擊的所有方格，此舉稱為雙鍵「Chording」。之所以稱為雙鍵，是因為傳統的「Chording」需要玩家同時點擊滑鼠左鍵和右鍵。</p>
+                <hr>
+                <br><h1>3BV</h1>
+                <p>3BV (Bechtel's Board Benchmark Value)是在不使用旗幟的情況下完成遊戲所需的最少點擊次數，用來表示一場遊戲的相對難度。數值越大，難度越高。3BV / s 是 3BV 除以遊戲秒數，代表玩家完成遊戲的速度。數值越大，速度越快。</p>
+            </div>
+            <!-- Patterns -->
+            <div class="tab-pane" id="Patterns">
+                <br><h1>地雷推導</h1>
+                <p>一個模式是一種常見的數字排列方式，對應著其周圍一些地雷或安全格子的分佈。記住模式將減少玩家需要思考的時間</p>
+                <div id="accordion">
+                    <h4>基本推導</h4>
+                    <div> <!-- Basic patterns -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- B1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/B1.png" alt="b1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="b1">B1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">如果一個數字和它周圍未打開格子數量相同，</li>
+                                        <li class="cursor-pointer table-text-size">則這些格子裡都是地雷。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- B2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/B2.png" alt="b2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="b2">B2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">如果一個數字和它周圍旗幟數量相同，</li>
+                                        <li class="cursor-pointer table-text-size">則可以打開周圍其它所有格子。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1.png" alt="1-1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1">1-1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看左邊的  <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">再看右邊的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有剛才的兩個黃色格子，其中已經有一個地雷，因此第三個格子是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-1p -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1p.png" alt="1-1p"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1p">1-1+</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看左邊的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">再看右邊的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有剛才的兩個黃色格子，其中已經有一個地雷，因此右邊的三個格子都是安全的</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2.png" alt="1-2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2">1-2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">然後看 <span class="help-num2">2</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍的第一個地雷在剛才的黃色格子中，因此第三個格子中有第二個地雷。</li>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2p -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2p.png" alt="1-2p"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2p">1-2+</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">然後看 <span class="help-num4">4</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍的第一個地雷在剛才的黃色格子中，因此右邊三個格子中都是地雷。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h4>縮減</h4>
+                    <div> <!-- Reduction -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- 1-1R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1R.png" alt="1-1R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1R">1-1R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">因為周圍已經有一個地雷，所以 <span class="help-num2">2</span> 變成 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">因為周圍已經有三個地雷，所以 <span class="help-num4">4</span> 變成 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">因此，<span class="help-num2">2</span>–<span class="help-num4">4</span> 變成 <span class="help-num1">1</span>–<span class="help-num1">1</span>模式，第三個格子可以打開。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2R.png" alt="1-2R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2R">1-2R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">因為周圍已經有一個地雷，所以 <span class="help-num2">2</span> 變成 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">因為周圍已經有一個地雷，所以 <span class="help-num3">3</span> 變成 <span class="help-num2">2</span>。</li>
+                                        <li class="cursor-pointer table-text-size">因此，<span class="help-num2">2</span>–<span class="help-num3">3</span> 變成 <span class="help-num1">1</span>–<span class="help-num2">2</span>模式，第三個格子中有一個地雷。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2-1R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2-1R.png" alt="1-2-1R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2-1R">1-2-1R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num2">2</span>–<span class="help-num3">3</span>–<span class="help-num2">2</span> 變成 <span class="help-num1">1</span> – <span class="help-num2">2</span> – <span class="help-num1">1</span>模式。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h4>孔洞</h4>
+                    <div> <!-- Hole -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- H1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H1.png" alt="H1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H1">H1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看底部的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">再看上面的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有剛才的兩個黃色格子，其中已經有一個地雷，因此其餘的格子都是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- H2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H2.png" alt="H2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H2">H2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看底部的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">再看上面的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有剛才的兩個黃色格子，其中已經有一個地雷，因此其餘的格子都是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- H3 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H3.png" alt="H3"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H3">H3</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看底部的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有兩個黃色格子，這兩個格子中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">再看上面的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有剛才的兩個黃色格子，其中已經有一個地雷，因此其餘的格子都是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>三角</h4>
+                    <div> <!-- Triangles -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- T1 -->
+                                <td class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T1.png" alt="T1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T1">T1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看底部的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size"> 它周圍有三個黃色格子，其中有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">再看上面的 <span class="help-num1">1</span>。</li>
+                                        <li class="cursor-pointer table-text-size">它周圍有剛才的三個黃色格子，其中已經有一個地雷，因此其餘的格子都是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T2.png" alt="T2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T2">T2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看紫色的格子。</li>
+                                        <li class="cursor-pointer table-text-size">它們在 <span class="help-num1">1</span> 的周圍，其中最多有一個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">然後看上面的 <span class="help-num2">2</span>。</li>
+                                        <li class="cursor-pointer table-text-size">紫色格子中最多有一個地雷，所以它周圍剩下的一個格子必然是地雷。</li>
+                                        <li class="cursor-pointer table-text-size">插上旗幟後，可以看出紫色格子中必然有一個地雷，因此 <span class="help-num1">1</span> 周圍的其它格子都是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T3 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T3.png" alt="T3"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T3">T3</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">先看紫色的格子。</li>
+                                        <li class="cursor-pointer table-text-size">它們在 <span class="help-num2">2</span> 的周圍，其中最多有兩個地雷。</li>
+                                        <li class="cursor-pointer table-text-size">然後看 <span class="help-num3">3</span>。</li>
+                                        <li class="cursor-pointer table-text-size">紫色格子中最多有兩個地雷，所以它周圍剩下的一個格子必然是地雷。</li>
+                                        <li class="cursor-pointer table-text-size">插上旗幟後，可以看出紫色格子中必然有兩個地雷，因此 <span class="help-num2">2</span> 周圍的其它格子都是安全的。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T4 -->
+                                    <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T4.png" alt="T4"></td>
+                                    <td>
+                                        <div class="text-center"><h4><a name="T4">T4</a></h4></div>
+                                        <ul>
+                                            <li class="cursor-pointer table-text-size">先看紫色的格子。</li>
+                                            <li class="cursor-pointer table-text-size">它們在 <span class="help-num2">2</span> 的周圍，其中最多有兩個地雷。</li>
+                                            <li class="cursor-pointer table-text-size">然後看 <span class="help-num4">4</span>。</li>
+                                            <li class="cursor-pointer table-text-size">紫色格子中最多有兩個地雷，所以它周圍剩下的兩個格子必然都是地雷。</li>
+                                            <li class="cursor-pointer table-text-size">插上旗幟後，可以看出紫色格子中必然有兩個地雷，因此 <span class="help-num2">2</span> 周圍的其它格子都是安全的。
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr> <!-- T5 -->
+                                    <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T5.png" alt="T5"></td>
+                                    <td>
+                                        <div class="text-center"><h4><a name="T5">T5</a></h4></div>
+                                        <ul>
+                                            <li class="cursor-pointer table-text-size">先看紫色的格子。</li>
+                                            <li class="cursor-pointer table-text-size">它們在 <span class="help-num1">1</span> 的周圍，其中最多有一個地雷。</li>
+                                            <li class="cursor-pointer table-text-size">然後看 <span class="help-num2">2</span>。</li>
+                                            <li class="cursor-pointer table-text-size">紫色格子中最多有一個地雷，所以它周圍剩下的一個格子必然是地雷。</li>
+                                            <li class="cursor-pointer table-text-size">插上旗幟後，可以看出紫色格子中必然有一個地雷，因此 <span class="help-num1">1</span> 周圍的其它格子都是安全的。</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Effucuency -->
+            <div class="tab-pane" id="Efficiency">
+                <br><h1>效率</h1>
+                <p>效率是指遊戲中已揭示的 3BV 除以總點擊數。在同樣的 3BV 下，點擊次數越少，效率越高。舉例來說，若您用 10 次點擊完成一場 3BV 為 12 的初級遊戲，則該遊戲的效率為 12 / 10 = 120%。同理，若您用 60 次點擊完成一場 3BV 為 48 的中級遊戲，則該遊戲的效率為 48 / 60 = 80%。</p>
+                <p>提高效率的方法是使用「Chord」同時展開數個鄰近方格。您可以在設定頁面選擇用傳統雙鍵、左鍵單鍵，或是關閉此功能。標幟多餘旗幟、點擊多餘鍵數、點擊空曠區域「Opening」周圍的方格，都會降低遊戲的效率。洽當使用「Chord」並配合「無旗幟」技術，即可將遊戲效率提升至 100% 以上。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+          $("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content" 
+            });
+    </script>
+</body>
+
+</html>

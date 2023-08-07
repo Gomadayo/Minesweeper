@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/help_style.css">
+
+</head>
+
+<body>
+    <!-- Top banner -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a href="../main/index_en.html"><img class="navbar-brand img-fluid" style="height: 60px;" src="./img/icon.jpg" alt="Minesweeper"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active text-light" style="font-size: 24px;" aria-current="page" href="../main/index_en.html">Minesweeper</a>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 me-3 mb-lg-0">
+                <li><button type="button" class="btn btnSize btn-danger mt-1 me-3" style="font-size: 20px;" onclick="location.href='../main/index_en.html'">Start</button></li>
+                <li><button type="button" class="btn btnSize btn-secondary mt-1 me-3" style="font-size: 20px;" onclick="location.href='./help_en.html'">Help</button></li>
+                <li class="nav-item dropdown mt-1">
+                    <button class="btn btnSize btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Language</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./help_zh.html">繁體中文</a></li>
+                        <li><a class="dropdown-item" href="./help_en.html">English</a></li>
+                        <li><a class="dropdown-item" href="./help_ja.html">日本語</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- <div class="container" style="margin-top: 80px;">
+        <div class="fixed-top">
+            <div class="d-flex p-2 bg-secondary"  style="height: 80px;">
+                <div class="p-2">
+                    <img class="img-fluid" style="height: 40px;" src="./img/icon.jpg" alt="Minesweeper">
+                </div>
+                <div class="p-2">
+                    <p  style="font-size: 24px;">Minesweeper</p>
+                </div>
+                <div class="p-2 ms-auto">
+                    <button type="button" class="btn btnSize btn-danger me-3" style="font-size: 20px;">Play</button>
+                    <button type="button" class="btn btnSize btn-dark me-3" style="font-size: 20px;" onclick="location.href='./help_en.html'">Help</button>
+                    <div class="dropdown" style="display: inline-block;">
+                        <button class="btn btnSize btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Language</button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="./help_zh.html">繁體中文</a></li>
+                          <li><a class="dropdown-item" href="./help_en.html">English</a></li>
+                          <li><a class="dropdown-item" href="./help_ja.html">日本語</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <br>
+
+    <!-- main body -->
+    <div class="container">
+        <ul class="flex-column flex-md-row nav nav-fill nav-pills" role="tablist">
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link active" href="#Rules" aria-selected="false" role="tab" tabindex="-1">Rules</a></li>
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link" href="#Patterns" aria-selected="false" role="tab" tabindex="-1">Patterns</a></li>
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link" href="#Efficiency" aria-selected="false" role="tab" tabindex="-1">Efficiency</a></li>
+        </ul>
+
+        <div class="container tab-content mb-5">
+            <!-- Rules -->
+            <div class="tab-pane active show" id="Rules">
+                <br><h1>Rules</h1>
+                <p>The board is divided into cells, with mines randomly distributed. To win, you need to open all the cells. The number on a cell shows the number of mines adjacent to it. Using this information, you can determine cells that are safe, and cells that contain mines. Cells suspected of being mines can be marked with a flag using the right mouse button.</p>
+                <p>To start a new game, you can click on the happy face at the top of the board or use the space bar. The remaining number of mines is displayed in the left corner, and the game timer is displayed in the right corner.</p>
+                <hr>
+                <br><h1>Chording</h1>
+                <p>When a number has the correct amount of flags, you can click on the number to open all the cells around it. This is called a chord because in older versions it required pressing two buttons, left + right, at the same time. Using chords greatly reduces unnecessary clicks, and is the foundation of efficient gameplay.</p>
+                <hr>
+                <br><h1>3BV</h1>
+                <p>3BV (Bechtel's Board Benchmark Value) is the minimum number of clicks required to complete a board without using flags. 3BV is used to measure the relative difficulty of a board, and the speed you are playing at (often expressed as 3BV/s, or 3BV per second).</p>
+            </div>
+            <!-- Patterns -->
+            <div class="tab-pane" id="Patterns">
+                <br><h1>Patterns</h1>
+                <p>A pattern is a common arrangement of numbers that has only one solution. If you memorise a pattern it will reduce the amount of time you use thinking.</p>
+                <div id="accordion">
+                    <h4>Basic patterns</h4>
+                    <div> <!-- Basic patterns -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- B1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/B1.png" alt="b1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="b1">B1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">If a number is touching the same number of cells,</li>
+                                        <li class="cursor-pointer table-text-size">then these cells are all mines.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- B2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/B2.png" alt="b2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="b2">B2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">If a number is touching the same number of flags,</li>
+                                        <li class="cursor-pointer table-text-size">then all adjacent cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1.png" alt="1-1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1">1-1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the left <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine. </li>
+                                        <li class="cursor-pointer table-text-size">Now look at the right <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the two yellow cells, so it already has a mine and the third cell can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-1p -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1p.png" alt="1-1p"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1p">1-1+</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the left <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the right <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the two yellow cells, so it already has a mine and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2.png" alt="1-2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2">1-2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the left <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the <span class="help-num2">2</span>.</li>
+                                        <li class="cursor-pointer table-text-size">Its first mine is in the yellow cells, therefore, the second mine is in the third cell.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2p -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2p.png" alt="1-2p"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2p">1-2+</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the left <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the <span class="help-num4">4</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the two yellow cells, so it already has one mine, therefore, as there are only three remaining cells, they must be mines.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h4>Reduction</h4>
+                    <div> <!-- Reduction -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- 1-1R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1R.png" alt="1-1R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1R">1-1R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num2">2</span> turns into <span class="help-num1">1</span>, since it already has one mine.</li>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num4">4</span> also turns into <span class="help-num1">1</span>, since it already has three mines.</li>
+                                        <li class="cursor-pointer table-text-size">Therefore, <span class="help-num2">2</span> – <span class="help-num4">4</span> turns into the <span class="help-num1">1</span> – <span class="help-num1">1</span> pattern and the third cell can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2R.png" alt="1-2R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2R">1-2R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num2">2</span> turns into <span class="help-num1">1</span>, since it already has one mine.</li>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num3">3</span> also turns into <span class="help-num2">2</span>, since it already has one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Therefore, <span class="help-num2">2</span> – <span class="help-num3">3</span> turns into the <span class="help-num1">1</span> – <span class="help-num2">2</span> pattern and there must be a mine in the third cell.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2-1R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2-1R.png" alt="1-2-1R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2-1R">1-2-1R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num2">2</span> – <span class="help-num3">3</span> – <span class="help-num2">2</span> turns into the <span class="help-num1">1</span> – <span class="help-num2">2</span> – <span class="help-num1">1</span> pattern.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h4>Hole</h4>
+                    <div> <!-- Hole -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- H1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H1.png" alt="H1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H1">H1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the bottom <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the top <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the two yellow cells, so it already has a mine and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- H2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H2.png" alt="H2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H2">H2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the bottom <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the top <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the two yellow cells, so it already has a mine and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- H3 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H3.png" alt="H3"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H3">H3</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the bottom <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the two yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the top <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the two yellow cells, so it already has a mine and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>Triangles</h4>
+                    <div> <!-- Triangles -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- T1 -->
+                                <td class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T1.png" alt="T1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T1">T1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the bottom <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It touches the three yellow cells, so they contain one mine.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the top <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">It also touches the three yellow cells, so it already has a mine and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T2.png" alt="T2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T2">T2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the purple cells.</li>
+                                        <li class="cursor-pointer table-text-size">They contain a maximum of one mine, because they touch <span class="help-num1">1</span>.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the top <span class="help-num2">2</span>.</li>
+                                        <li class="cursor-pointer table-text-size">If the purple cells contain a maximum of one mine, then there must be a mine in the remaining cell.</li>
+                                        <li class="cursor-pointer table-text-size">If you put the flag, you can see that there is one mine in the purple cells. So <span class="help-num1">1</span> already has a mine and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T3 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T3.png" alt="T3"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T3">T3</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">Look at the purple cells.</li>
+                                        <li class="cursor-pointer table-text-size">They contain a maximum of two mines, because they touch <span class="help-num2">2</span>.</li>
+                                        <li class="cursor-pointer table-text-size">Now look at the <span class="help-num3">3</span>.</li>
+                                        <li class="cursor-pointer table-text-size">If the purple cells contain a maximum of two mines, then there must be a mine in the remaining cell.</li>
+                                        <li class="cursor-pointer table-text-size">If you put the flag, you can see that there are two mines in the purple cells. So <span class="help-num2">2</span> already has mines and all the remaining cells can be opened.</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T4 -->
+                                    <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T4.png" alt="T4"></td>
+                                    <td>
+                                        <div class="text-center"><h4><a name="T4">T4</a></h4></div>
+                                        <ul>
+                                            <li class="cursor-pointer table-text-size">Look at the purple cells.</li>
+                                            <li class="cursor-pointer table-text-size">They contain a maximum of two mines, because they touch <span class="help-num2">2</span>.</li>
+                                            <li class="cursor-pointer table-text-size">Now look at the <span class="help-num4">4</span>.</li>
+                                            <li class="cursor-pointer table-text-size">If the purple cells contain a maximum of two mines, then there must be two mines in the remaining cells.</li>
+                                            <li class="cursor-pointer table-text-size">If you put the flags, you can see that there are two mines in the purple cells. So <span class="help-num2">2</span> already has mines and all the remaining cells can be opened.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr> <!-- T5 -->
+                                    <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T5.png" alt="T5"></td>
+                                    <td>
+                                        <div class="text-center"><h4><a name="T5">T5</a></h4></div>
+                                        <ul>
+                                            <li class="cursor-pointer table-text-size">Look at the purple cells.</li>
+                                            <li class="cursor-pointer table-text-size">They contain a maximum of one mines, because they touch <span class="help-num1">1</span>.</li>
+                                            <li class="cursor-pointer table-text-size">Now look at the <span class="help-num2">2</span>.</li>
+                                            <li class="cursor-pointer table-text-size">If the purple cells contain a maximum of one mine, then there must be a mine in the remaining third cell.</li>
+                                            <li class="cursor-pointer table-text-size">If you put the flag, you can see that there is one mine in the purple cells. So <span class="help-num1">1</span> already has a mine and all the remaining cells can be opened.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Effucuency -->
+            <div class="tab-pane" id="Efficiency">
+                <br><h1>Efficiency</h1>
+                <p>Efficiency is the 
+                   <abbr title="3BV is the minimum number of clicks required to complete a board without using flags. The higher it is, the more difficult is the game.">3BV</abbr>
+                    of a board divided by the number of clicks used to solve it. The less clicks used, the higher the efficiency. An Efficiency of 100% means you solved a 3BV 50 board in 50 clicks.</p>
+                <p>The only way to gain efficiency is to chord. Efficiency is lost by placing flags, wasting clicks, or clicking cells that would be revealed by an opening. By combining NF technique and smart chording you can get more than 100% efficiency.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+          $("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content" 
+            });
+    </script>
+</body>
+
+</html>

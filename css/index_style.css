@@ -1,0 +1,305 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  background: #303030;
+  color: white;
+}
+
+nav {
+  background: #1c1c1c;
+}
+
+main {
+  margin-top: 20px;
+  align-items: center;
+  z-index: 1;
+}
+
+/* setting */
+#setting {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#textContainer{
+  width: 450px;
+  height: 280px;
+  margin: 0 auto;
+  border: solid 10px white;
+  border-radius: 5px;
+  filter: blur(2px);
+  z-index: -1;
+  animation: textBoardRGB 5s infinite;
+}
+
+#text {
+  width: 450px;
+  height: 270px;
+  margin: 0 auto;
+  margin-top: -265px;
+  text-align: center;
+  /* border: solid 1px snow; */
+  border-radius: 5px; 
+  z-index: 2;
+}
+
+/* #text h1 {
+  color: yellowgreen;
+  margin: 0;
+} */
+
+#text h3 {
+  margin: 0;
+}
+
+#text p {
+  font-size: 20px;
+  margin: 3px 0;
+}
+
+.errMess::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e000";
+}
+
+.errMess {
+  animation: shake 800ms;
+}
+
+#setting2 {
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
+}
+
+#setting2 #btn {
+  background: #1c1c1c;
+}
+
+.btnSize {
+  width: 120px;
+  height: 45px;
+  font-size: 18px;
+}
+
+/* #btn {
+  width: 40%;
+  margin: 3px auto;
+  padding: 2px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: solid 1px black;
+  background: black;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.timer::before {
+  line-height: 30px;
+  font-size: 24px;
+  font-family: "Material Icons Outlined";
+  content: "\e425";
+}
+
+.width::before {
+  font-family: "Material Symbols Outlined";
+  content: "\f730";
+  animation: fadein 0.3s;
+}
+
+.height::before {
+  font-family: "Material Symbols Outlined";
+  content: "\ea16";
+  animation: fadein 0.3s;
+}
+
+.explosion::before {
+  font-family: "Material Symbols Outlined";
+  content: "\f685";
+  animation: fadein 0.3s;
+}
+
+p.shake {
+  animation: shake 0.35s 2;
+}
+
+/* game */
+#h,
+#w,
+#m {
+  width: 100px;
+}
+
+#board {
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #1c1c1c;
+}
+
+
+td {
+  border: solid 3px lightgray;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  text-align: center;
+  animation: boardRGB 5s infinite;
+}
+
+td:hover {
+  background: linear-gradient(135deg, rgb(122, 122, 122), rgb(81, 81, 81), rgb(41, 41, 41));
+}
+
+.open {
+  background: linear-gradient(135deg, white, gray, black);
+}
+
+.flag::before {
+  font-family: "Material Icons";
+  content: "\e153";
+  animation: fadein 0.3s;
+}
+
+.click::before {
+  font-family: "Material Symbols Outlined";
+  content: "\f718";
+  animation: fadein 0.3s;
+}
+
+.mine {
+  background: red;
+  border: solid 3px red;
+  color: yellow;
+  animation: fadein 1s infinite;
+}
+
+.mine::before {
+  font-family: "Material Symbols Outlined";
+  content: "\f685";
+}
+
+.clear {
+  background: lightgreen;
+  animation: fadein 5s infinite;
+}
+
+.clear::before {
+  color: firebrick;
+  border: solid 3px firebrick;
+  font-family: "Material Icons";
+  content: "\e545";
+}
+
+.mineCount::before {
+  font-size: 24px;
+  font-family: "Material Symbols Outlined";
+  content: "\f685";
+}
+
+.zoomin {
+  animation: zoomin 1s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0)
+  }
+
+  25% {
+    transform: translateX(5px)
+  }
+
+  50% {
+    transform: translateX(-5px)
+  }
+
+  75% {
+    transform: translateX(5px)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+@keyframes zoomin {
+  0% {
+    font-size: 48px;
+  }
+
+  100% {
+    font-size: 24px;
+  }
+}
+
+@keyframes boardRGB {
+  0% {
+    border: solid 3px red;
+  }
+
+  25% {
+    border: solid 3px yellow;
+  }
+
+  50% {
+    border: solid 3px green;
+  }
+
+  75% {
+    border: solid 3px blue;
+  }
+
+  100% {
+    border: solid 3px red;
+  }
+}
+
+@keyframes textBoardRGB {
+  0% {
+    border: solid 7px red;
+  }
+
+  25% {
+    border: solid 7px yellow;
+  }
+
+  50% {
+    border: solid 7px green;
+  }
+
+  75% {
+    border: solid 7px blue;
+  }
+
+  100% {
+    border: solid 7px red;
+  }
+}
+
+#result {
+  width: 95%;
+  font-size: 24px;
+  margin: 0 auto;
+  text-align: center;
+}

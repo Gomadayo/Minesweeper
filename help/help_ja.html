@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヘルプ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/help_style.css">
+
+</head>
+
+<body>
+    <!-- Top banner -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a href="../main/index_ja.html"><img class="navbar-brand img-fluid" style="height: 60px;" src="./img/icon.jpg" alt="Minesweeper"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active text-light" style="font-size: 24px;" aria-current="page" href="../main/index_ja.html">マインスイーパー</a>
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 me-3 mb-lg-0">
+                <li><button type="button" class="btn btnSize btn-danger mt-1 me-3" style="font-size: 20px;" onclick="location.href='../main/index_ja.html'">スタート</button></li>
+                <li><button type="button" class="btn btnSize btn-secondary mt-1 me-3" style="font-size: 20px;" onclick="location.href='./help_ja.html'">ヘルプ</button></li>
+                <li class="nav-item dropdown mt-1">
+                    <button class="btn btnSize btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">語言</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./help_zh.html">繁體中文</a></li>
+                        <li><a class="dropdown-item" href="./help_en.html">English</a></li>
+                        <li><a class="dropdown-item" href="./help_ja.html">日本語</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- <div class="container" style="margin-top: 80px;">
+        <div class="fixed-top">
+            <div class="d-flex p-2 bg-secondary"  style="height: 80px;">
+                <div class="p-2">
+                    <img class="img-fluid" style="height: 40px;" src="./img/icon.jpg" alt="Minesweeper">
+                </div>
+                <div class="p-2">
+                    <p  style="font-size: 24px;">マインスイーパ</p>
+                </div>
+                <div class="p-2 ms-auto">
+                    <button type="button" class="btn btnSize btn-danger me-3" style="font-size: 20px;">遊びます</button>
+                    <button type="button" class="btn btnSize btn-dark me-3" style="font-size: 20px;" onclick="location.href='./help_ja.html'">ヘルプ</button>
+                    <div class="dropdown" style="display: inline-block;">
+                        <button class="btn btnSize btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">語言</button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="./help_zh.html">繁體中文</a></li>
+                          <li><a class="dropdown-item" href="./help_en.html">English</a></li>
+                          <li><a class="dropdown-item" href="./help_ja.html">日本語</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <br>
+
+    <!-- main body -->
+    <div class="container">
+        <ul class="flex-column flex-md-row nav nav-fill nav-pills" role="tablist">
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link active" href="#Rules" aria-selected="false" role="tab" tabindex="-1">ルール</a></li>
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link" href="#Patterns" aria-selected="false" role="tab" tabindex="-1">パターン</a></li>
+            <li class="nav-item" role="presentation"><a data-bs-toggle="pill" class="nav-link" href="#Efficiency" aria-selected="false" role="tab" tabindex="-1">効率</a></li>
+        </ul>
+
+        <div class="container tab-content mb-5">
+            <!-- Rules -->
+            <div class="tab-pane active show" id="Rules">
+                <br><h1>ルール</h1>
+                <p>盤面はマス目に分かれていて、爆弾がランダムに配置されています。勝利するには、爆弾が埋まっていない全てのマスを開ける必要があります。爆弾が埋まっていないマスをクリックすると、周囲8マスにある爆弾の数を示す数字が表れます。この情報を用いることで、どのマスが安全であるか、そしてどのマスに爆弾が埋まっているかを推測できます。爆弾が埋まっていそうなマスは右クリックをすることで旗でマークできます。</p>
+                <p>新しいゲームを始めるには、一番上に表示されているニコちゃんマークをクリックするか、スペースキーを押します。残りの爆弾の数が左上に表示され、ゲームのタイマーが右上に表示されます。</p>
+                <hr>
+                <br><h1>コーディング</h1>
+                <p>数字の書かれているマスの周囲にその数字と同じだけの旗が立っているとき、そのマスをクリックすると周囲にあるまだ空いていないマスを一気に開けることができます。従来のマインスイーパーでは左右同時クリックで開いていたため、これをコーディング（訳注：英語で調和を意味する単語）と言います。コーディングにより不要なクリック数を減らすことができ、より効率的にゲームをプレイすることができます。</p>
+                <hr>
+                <br><h1>3BV</h1>
+                <p>3BV (Bechtel's Board Benchmark Value)とは、旗を使わずに盤面をクリアするのに必要な最少クリック数です。3BVは主に盤面の難易度を比較するのに用いられたり、どれだけのスピードでプレイしているかを測るために用いられています(速度は3BV/s、3BV毎秒として表されます)。</p>
+            </div>
+            <!-- Patterns -->
+            <div class="tab-pane" id="Patterns">
+                <br><h1>パターン</h1>
+                <p>パターンとは、答えが1つに特定できる数字の配置のことです。パターンを記憶すれば、ゲーム中に思考する時間を減らすことができます。</p>
+                <div id="accordion">
+                    <h4>基本的なパターン                    </h4>
+                    <div> <!-- Basic patterns -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- B1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/B1.png" alt="b1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="b1">B1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">数字に同じ数のマスが隣接しているとき、</li>
+                                        <li class="cursor-pointer table-text-size">これらのマスはすべて爆弾です。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- B2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/B2.png" alt="b2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="b2">B2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">数字に同じ数の旗が隣接しているとき、</li>
+                                        <li class="cursor-pointer table-text-size">ほかの隣接するマスを開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1.png" alt="1-1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1">1-1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">左側の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスのみに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に右側の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の2マスに接しているため、どちらかが爆弾なので、安全な緑のマスを開けられます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-1p -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1p.png" alt="1-1p"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1p">1-1+</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">左側の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスのみに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に右側の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の2マスに接しているため、どちらかが爆弾なので、安全な残りの緑のマスを開けられます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2.png" alt="1-2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2">1-2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">左側の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスのみに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に右側の<span class="help-num2">2</span>のマスを見てください。</li>
+                                        <li class="cursor-pointer table-text-size">1つめの爆弾は黄色のマスのどちらかにあるため、2つめの爆弾が緑のマスにあることがわかります。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2p -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2p.png" alt="1-2p"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2p">1-2+</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">左側の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスのみに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に<span class="help-num4">4</span>のマスを見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の2マスに接しているため、すでに1つ爆弾があることがわかります。そのため、残り3マスはすべて爆弾です。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h4>簡略化</h4>
+                    <div> <!-- Reduction -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- 1-1R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-1R.png" alt="1-1R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-1R">1-1R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">既に1つ爆弾が判明しているため、<span class="help-num2">2</span>を<span class="help-num1">1</span>にします。</li>
+                                        <li class="cursor-pointer table-text-size">既に3つ爆弾が判明しているため、<span class="help-num4">4</span>も<span class="help-num1">1</span>にします。</li>
+                                        <li class="cursor-pointer table-text-size">すると、<span class="help-num2">2</span> – <span class="help-num4">4</span>が<span class="help-num1">1</span> – <span class="help-num1">1</span>パターンになるため、緑のマスを開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2R.png" alt="1-2R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2R">1-2R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">既に1つ爆弾が判明しているため、<span class="help-num2">2</span>を<span class="help-num1">1</span>にします。</li>
+                                        <li class="cursor-pointer table-text-size">既に1つ爆弾が判明しているため、<span class="help-num3">3</span>を<span class="help-num1">1</span>にします。</li>
+                                        <li class="cursor-pointer table-text-size">すると、<span class="help-num2">2</span> – <span class="help-num3">3</span>が<span class="help-num1">1</span> – <span class="help-num2">2</span> パターンになるため、緑のマスを開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- 1-2-1R -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/1-2-1R.png" alt="1-2-1R"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="1-2-1R">1-2-1R</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num2">2</span> – <span class="help-num3">3</span> – <span class="help-num2">2</span>が<span class="help-num1">1</span> – <span class="help-num2">2</span> – <span class="help-num1">1</span>パータンになります。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h4>穴</h4>
+                    <div> <!-- Hole -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- H1 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H1.png" alt="H1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H1">H1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">下の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスのみに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に上の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の2マスに接しているため、すでに爆弾が1つあることになり、そのため残りのマスをすべて開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- H2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H2.png" alt="H2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H2">H2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">下の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に上の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の2マスに接しているため、すでに爆弾が1つあることになり、そのため残りのマスをすべて開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- H3 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/H3.png" alt="H3"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="H3">H3</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">下の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の2マスに接しているため、どちらかに1つ爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に上の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の2マスに接しているため、すでに爆弾が1つあることになり、そのため残りのマスをすべて開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>三角</h4>
+                    <div> <!-- Triangles -->
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                                <tr> <!-- T1 -->
+                                <td class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T1.png" alt="T1"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T1">T1</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">下の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">黄色の3マスに接しているため、そのいずれかに爆弾があります。</li>
+                                        <li class="cursor-pointer table-text-size">次に上の<span class="help-num1">1</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">同じく黄色の3マスに接しているため、すでに爆弾が1つあることになり、そのため残りのマスをすべて開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T2 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T2.png" alt="T2"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T2">T2</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">紫のマスを見てください。</li>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num1">1</span>に接しているため、最大で1つしか爆弾がありません。</li>
+                                        <li class="cursor-pointer table-text-size">次に<span class="help-num2">2</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">紫のマスには爆弾が最大で1つしかないため、緑のマスには爆弾がなければなりません。</li>
+                                        <li class="cursor-pointer table-text-size">旗を置いたあと、紫のマスには必ず1つ爆弾があることがわかるため、<span class="help-num1">1</span>にはすでに爆弾が1つあると確定するため、残りの緑のマスはすべて開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T3 -->
+                                <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T3.png" alt="T3"></td>
+                                <td>
+                                    <div class="text-center"><h4><a name="T3">T3</a></h4></div>
+                                    <ul>
+                                        <li class="cursor-pointer table-text-size">紫のマスを見てください。</li>
+                                        <li class="cursor-pointer table-text-size"><span class="help-num2">2</span>に接しているため、最大で2つしか爆弾がありません。</li>
+                                        <li class="cursor-pointer table-text-size">次に<span class="help-num3">3</span>を見てください。</li>
+                                        <li class="cursor-pointer table-text-size">紫のマスには爆弾が最大で2つしかないため、緑のマスには爆弾がなければなりません。</li>
+                                        <li class="cursor-pointer table-text-size">旗を置いたあと、紫のマスには必ず2つ爆弾があることがわかるため、<span class="help-num2">2</span>にはすでに爆弾が2つあると確定するため、残りの緑のマスはすべて開けることができます。</li>
+                                    </ul>
+                                </td>
+                                </tr>
+                                <tr> <!-- T4 -->
+                                    <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T4.png" alt="T4"></td>
+                                    <td>
+                                        <div class="text-center"><h4><a name="T4">T4</a></h4></div>
+                                        <ul>
+                                            <li class="cursor-pointer table-text-size">紫のマスを見てください。</li>
+                                            <li class="cursor-pointer table-text-size"><span class="help-num2">2</span>に接しているため、最大で2つしか爆弾がありません。</li>
+                                            <li class="cursor-pointer table-text-size">次に<span class="help-num4">4</span>を見てください。</li>
+                                            <li class="cursor-pointer table-text-size">紫のマスには爆弾が最大で2つしかないため、緑のマスには爆弾がなければなりません。</li>
+                                            <li class="cursor-pointer table-text-size">旗を置いたあと、紫のマスには必ず2つ爆弾があることがわかるため、<span class="help-num2">2</span>にはすでに爆弾が2つあると確定するため、残りの緑のマスはすべて開けることができます。</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr> <!-- T5 -->
+                                    <td  class="bg-success bg-opacity-25"><img class="cursor-pointer help-img" src="./img/help/T5.png" alt="T5"></td>
+                                    <td>
+                                        <div class="text-center"><h4><a name="T5">T5</a></h4></div>
+                                        <ul>
+                                            <li class="cursor-pointer table-text-size">紫のマスを見てください。</li>
+                                            <li class="cursor-pointer table-text-size"><span class="help-num1">1</span>に接しているため、最大で1つしか爆弾がありません。</li>
+                                            <li class="cursor-pointer table-text-size">次に<span class="help-num2">2</span>を見てください。</li>
+                                            <li class="cursor-pointer table-text-size">紫のマスには爆弾が最大で1つしかないため、緑のマスには爆弾がなければなりません。</li>
+                                            <li class="cursor-pointer table-text-size">旗を置いたあと、紫のマスには必ず1つ爆弾があることがわかるため、<span class="help-num1">1</span>にはすでに爆弾が1つあると確定するため、残りの緑のマスはすべて開けることができます。</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Effucuency -->
+            <div class="tab-pane" id="Efficiency">
+                <br><h1>効率</h1>
+                <p>効率とは、盤面の
+                   <abbr title="3BVとはゲームを解くのに必要な最小クリック数となります。このパラメータはマップの複雑さを示す、3BVの値が高いほど盤面がより難しくなります。">3BV</abbr>
+                   を解くのに使ったクリック数で割った値です。つまりクリック数が少なければ少ないほど効率が上がります。3BVが50の盤面を50クリックで解くと効率100%ということです。</p>
+                <p>効率を上げる唯一の方法はコーディングをすることです。効率は旗を置く、無駄にクリックする、あるいは空白マスのクリックで開いたであろうマスをクリックすることで減っていきます。NFのテクニックと上手いコーディングを組み合わせることで、100%を超えた効率も狙えます。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+          $("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content" 
+            });
+    </script>
+</body>
+
+</html>

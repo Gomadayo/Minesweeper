@@ -1,0 +1,61 @@
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", Meiryo, sans-serif;
+    background: #303030;
+    color: white;
+  }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+nav {
+    background: #1c1c1c;
+}
+
+.textSize {
+    font-size: 18px;
+}
+
+td:first-child {
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    line-height: 140px;
+}
+
+.table-text-size {
+    font-size: 14px;
+}
+
+.help-img {
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+
+.help-num1 {
+    color: blue;
+    font-weight: 900;
+}
+
+.help-num2 {
+    color: green;
+    font-weight: 900;
+}
+
+.help-num3 {
+    color: red;
+    font-weight: 900;
+}
+
+.help-num4 {
+    color: navy;
+    font-weight: 900;
+}
+
+.btnSize {
+    width: 120px;
+    height: 45px;
+    font-size: 18px;
+}
